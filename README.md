@@ -1,2 +1,2 @@
 # Strona Pierdoliszek 
-Mega cute
+Mega cute jest szymi
