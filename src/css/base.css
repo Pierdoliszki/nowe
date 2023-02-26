@@ -684,3 +684,14 @@ html.has-scroll-dragging {
   margin: 0;
   text-align: center !important;
 }
+
+.pg-about {
+  height: 100vh;
+  background-image: url(../img/27.jpg);
+}
+
+
+.pg-contact {
+  height: 100vh;
+  background-image: url(../img/9.jpg);
+}
