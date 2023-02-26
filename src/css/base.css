@@ -21,12 +21,12 @@
 body {
 	margin: 0;
 	--color-text: #000;
-	--color-bg: #b7b19f;
+	--color-bg: #EFEBDA;
 	--color-link: #000;
 	--color-link-hover: #7f3087;
 	--color-heading: #111;
 	color: var(--color-text);
-	background-image: url(../img/9.jpg);
+	background-image: url(../img/15.jpg);
 	font-family: gloriaHallelujah, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -35,6 +35,10 @@ body {
 	--grid-item-width: calc(var(--grid-item-height) * var(--ratio));
 	--thumb-height: 5vw;
 	--thumb-width: calc(var(--thumb-height) * var(--ratio));
+}
+
+main {
+  background-image: url(../img/9.jpg);
 }
 
 .oh {
@@ -65,7 +69,8 @@ body {
 	margin: -30px 0 0 -30px;
 	border-radius: 50%;
 	opacity: 0.4;
-	background: var(--color-link);
+	background: #8400ff;
+  background-image: url(../logo.png);
 	animation: loaderAnim 0.7s linear infinite alternate forwards;
 
 }
@@ -152,7 +157,7 @@ main::after {
 }
 
 .frame__title {
-  font-family: Bodoni, serif;
+  font-family: meno-banner, serif;
 	font-size: 1rem;
 	margin: 0 0 0.5rem;
 	font-weight: normal;
@@ -160,6 +165,7 @@ main::after {
 }
 
 .frame__links {
+  font-family: meno-banner, serif !important;
 	grid-area: links;
 }
 
@@ -175,7 +181,6 @@ main::after {
 	border-bottom: 1px solid #000;
 	width: 30px;
 	height: 15px;
-	cursor: not-allowed;
 }
 
 .button-menu span {
@@ -340,6 +345,7 @@ main::after {
 .content__item-text {
 	opacity: 0;
 	text-transform: uppercase;
+  font-family: meno-banner, serif;
 	grid-area: text;
 	display: flex;
 	flex-direction: column;
@@ -669,4 +675,12 @@ html.has-scroll-dragging {
 [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
 	right: auto;
 	bottom: 0;
+}
+
+.bio {
+  color: #7f3087;
+  color: #000;
+  padding: 0;
+  margin: 0;
+  text-align: center !important;
 }
