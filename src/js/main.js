@@ -125,13 +125,14 @@
 			}
 		} );
 	}
-
 	// toggle menu fn
 	function toggleMenu() {
+    const overlay = document.getElementById('overlay');
 		if( isMenuOpen ) {
 			closeMenu();
 		}
 		else {
+      overlay.style.display = 'flex';
 			openMenu();
 			isMenuOpen = true;
 		}
@@ -183,6 +184,8 @@
 		if( id ) {
 			current = futureCurrent;
 		}
+    const overlay = document.getElementById('overlay');
+    overlay.style.display = 'none';
 		
 		// close menu..
 		classie.remove(menuCtrl, 'menu-button--open');
