@@ -95,7 +95,8 @@ main {
 	margin: -100px 0 0 -100px;
 	border-radius: 50%;
   background-size: cover;
-  background-image: url(../assets/loader.svg);
+  background-color: #7f3087;
+  /* background-image: url(../assets/loader.svg); */
 
 }
 
