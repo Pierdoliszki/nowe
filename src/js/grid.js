@@ -31,6 +31,7 @@ export class Grid {
         heading: {top: document.querySelector('.heading--up'), bottom: document.querySelector('.heading--down')},
         // .button-back button
         backCtrl: document.querySelector('.button-back'),
+        backOverlay: document.querySelector('.overlay-back'),
         // .content__nav
         contentNav: document.querySelector('.content__nav'),
         
@@ -199,6 +200,20 @@ export class Grid {
             this.closeContent();
         });
 
+        this.DOM.backOverlay.addEventListener('click', () => {
+          if ( this.isGridView || this.isAnimating ) {
+              return false;
+          }
+          this.isAnimating = true;
+          this.isGridView = true;
+
+          // Restart the Locomotive scroll
+          this.initSmoothScroll();
+          this.lscroll.scrollTo(this.lastscroll, {duration: 0, disableLerp: true});
+
+          this.closeContent();
+      });
+
     }
 
     /**
@@ -206,6 +221,7 @@ export class Grid {
      * @param {GridItem} gridItem - the gridItem element.
      */
     showContent(gridItem) {
+        this.DOM.backOverlay.style.display = 'flex';
         // All the other (that are inside the viewport)
         this.viewportGridItems = this.gridItemArr.filter(el => el != gridItem && el.DOM.el.classList.contains('in-view'));
         // Remaining (not in the viewport)
@@ -312,6 +328,7 @@ export class Grid {
      * Scale down the image and reveal the grid again.
      */
     closeContent() {
+      this.DOM.backOverlay.style.display = 'none';
         // Current grid item
         const gridItem = this.gridItemArr[this.currentGridItem];
         
