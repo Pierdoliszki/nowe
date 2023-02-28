@@ -35,6 +35,7 @@ body {
 	--grid-item-width: calc(var(--grid-item-height) * var(--ratio));
 	--thumb-height: 5vw;
 	--thumb-width: calc(var(--thumb-height) * var(--ratio));
+  cursor: url("../assets/cursor.svg") 4 4, pointer;
 }
 
 main {
@@ -73,13 +74,13 @@ main {
 
 /* Page Loader */
 .js .loading::before,
-.js .loading::after {
+.js .loading::after, #loader{
 	content: '';
 	position: fixed;
-	z-index: 5000;
+  z-index: 10000;
 }
 
-.js .loading::before {
+.js .loading::before, #loader{
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -87,7 +88,7 @@ main {
   background-color: #fff;
 }
 
-.js .loading::after {
+.js .loading::after, #loader::after{
 	top: 50%;
 	left: 50%;
 	width: 200px;
@@ -95,8 +96,7 @@ main {
 	margin: -100px 0 0 -100px;
 	border-radius: 50%;
   background-size: cover;
-  background-color: #7f3087;
-  /* background-image: url(../assets/loader.svg); */
+  background-image: url(../assets/loader.svg);
 
 }
 
@@ -292,6 +292,7 @@ main::after {
 	overflow: hidden;
 	border-radius: 8px;
 	cursor: pointer;
+  cursor: url("../assets/cursor.svg") 16 16, pointer;
 	margin: 8vh 1vw 0;
 }
 
