@@ -46,7 +46,7 @@ body {
   pointer-events: none;
   width: 100px;
   height: 100px;
-  z-index: 20000;
+  z-index: 9999;
 }
 
 /* Position the custom cursor element to align with the mouse pointer */
@@ -56,6 +56,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media (hover: none) {
+  .custom-cursor {
+     display: none;
+   }
+ }
 
 .custom-cursor img {
   transition: width 0.2s ease-out, height 0.2s ease-out;
@@ -76,6 +81,7 @@ main {
   display: none;
   align-items: center;
   justify-content: center;
+  cursor: none;
 }
 
 .overlay-back {
@@ -133,7 +139,10 @@ a {
 a:hover {
 	color: var(--color-link-hover);
 	outline: none;
+  transform: scale(1.7);
+  transition: transform 0.3s ease;
 }
+
 
 /* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
 a:focus {
@@ -473,7 +482,7 @@ main::after {
 	opacity: 0;
 	stroke: #000;
 	z-index: 1000;
-	cursor: pointer;
+	cursor: none;
 	width: 50px;
 	grid-area: back;
 	align-self: start;
@@ -551,6 +560,7 @@ main::after {
 
 	.frame a,
 	.frame button {
+    cursor: none;
 		pointer-events: auto;
 	}
 

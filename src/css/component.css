@@ -55,6 +55,7 @@ html.js,
 }
 
 .pages-nav .pages-nav__item--social {
+  margin-top: 20px;
 	width: 100%;
 	opacity: 0;
 	-webkit-transition: -webkit-transform 1.2s, opacity 1.2s;
@@ -161,7 +162,7 @@ html.js,
 }
 
 .js .pages-stack--open .page {
-	cursor: pointer;
+	cursor: none;
 	-webkit-transition: -webkit-transform 0.45s, opacity 0.45s;
 	transition: transform 0.45s, opacity 0.45s;
 	-webkit-transition-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
@@ -201,7 +202,7 @@ html.js,
 	width: 30px;
 	height: 24px;
 	padding: 0;
-	cursor: pointer;
+	cursor: none;
 	border: none;
 	outline: none;
 	background: transparent;
@@ -209,6 +210,11 @@ html.js,
 
 .no-js .menu-button {
 	display: none;
+}
+
+.menu-button:hover {
+  transform: scale(1.7);
+  transition: transform 0.3s ease;
 }
 
 .menu-button::before,

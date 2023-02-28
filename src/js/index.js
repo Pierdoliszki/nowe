@@ -37,6 +37,31 @@ growOnHoverElement.forEach((element) => {
   });
 });
 
+var overlayOnHoverElement = document.getElementById("overlay");
+overlayOnHoverElement.addEventListener("mouseover", function (event) {
+    // Update the size of the custom cursor element
+    var customCursor = document.querySelector(".custom-cursor img");
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+        // check if the mouse is inside the element's boundaries
+        if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+          customCursor.style.width = "100px";
+          customCursor.style.height = "100px";
+          svg.style.left = `${x}px`;
+          svg.style.top = `${y}px`;
+        } else {
+          customCursor.style.width = "40px";
+          customCursor.style.height = "40px";
+        }
+  });
+  overlayOnHoverElement.addEventListener("mouseout", function () {
+    // Reset the size of the custom cursor element
+    var customCursor = document.querySelector(".custom-cursor img");
+    customCursor.style.width = "40px";
+    customCursor.style.height = "40px";
+  });
+
 function removeFadeOut(el, speed) {
   var seconds = speed / 1000;
   el.style.transition = "opacity " + seconds + "s ease";
