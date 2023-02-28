@@ -35,7 +35,30 @@ body {
 	--grid-item-width: calc(var(--grid-item-height) * var(--ratio));
 	--thumb-height: 5vw;
 	--thumb-width: calc(var(--thumb-height) * var(--ratio));
-  cursor: url("../assets/cursor.svg") 4 4, pointer;
+  cursor: none;
+}
+
+/* Style the custom cursor element */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100px;
+  height: 100px;
+  z-index: 20000;
+}
+
+/* Position the custom cursor element to align with the mouse pointer */
+.custom-cursor img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor img {
+  transition: width 0.2s ease-out, height 0.2s ease-out;
 }
 
 main {
@@ -291,8 +314,6 @@ main::after {
 	position: relative;
 	overflow: hidden;
 	border-radius: 8px;
-	cursor: pointer;
-  cursor: url("../assets/cursor.svg") 16 16, pointer;
 	margin: 8vh 1vw 0;
 }
 
